@@ -16,7 +16,15 @@ export default function Shop() {
 
   return (
     <div className="shop">
-      {loader ? <h1>"Загружается"</h1> : ""}
+      {loader ? (
+        <>
+          <div className="loader">
+            <h1>"Загружается"</h1>
+          </div>
+        </>
+      ) : (
+        ""
+      )}
       {items.map((item) => (
         <Item key={item.id} info={item} />
       ))}
