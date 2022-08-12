@@ -17,7 +17,7 @@ export default function Item(props) {
 
   return (
     <div className="item">
-      <img src={info.image} alt={info.name} />
+      <img className="item-img" src={info.image} alt={info.name} />
       <div className="item-info">
         <h2>{info.name}</h2>
         <p>{info.desc}</p>
