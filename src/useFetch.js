@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 export default function useFetch() {
   const [loader, setLoader] = useState(true);
 
-  function get(url) {
+  const get = useCallback((url) => {
     return new Promise((resolve, reject) => {
       fetch(url)
         .then((response) => response.json())
@@ -20,7 +20,7 @@ export default function useFetch() {
           reject(error);
         });
     });
-  }
+  }, []);
 
   function post(url, body) {
     return new Promise((resolve, reject) => {

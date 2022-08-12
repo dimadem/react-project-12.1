@@ -12,6 +12,7 @@ export default function Shop() {
     get("https://covid-shop-mcs.herokuapp.com/")
       .then((data) => setItems(data))
       .catch((error) => console.log(error));
+    console.log("message");
   }, [get]);
 
   return (
